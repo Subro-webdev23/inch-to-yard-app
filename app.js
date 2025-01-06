@@ -15,6 +15,9 @@ label1.textContent = inputLavels[0];  // Correctly assigns "Inch"
 label2.textContent = inputLavels[1];  // Correctly assigns "Yard"
 inchYardButton.textContent = buttonTexts[0]; // Assigns "Inch to Yard"
 
+input1.textContent = 0;
+input2.textContent = 0;
+
 // Toggle Conversion Direction
 inchYardButton.addEventListener('click', () => {
     if(inchYardButton.textContent === buttonTexts[0]){
@@ -45,7 +48,7 @@ function convert2(){
         if(inchYardButton.textContent === buttonTexts[1]){
             input1.value = (in2 / 36).toFixed(2);
         }else{
-            input2.value = (in2 * 36).toFixed(2);
+            input1.value = (in2 * 36).toFixed(2);
         }
 }
 
@@ -53,6 +56,9 @@ function convert2(){
 input1.addEventListener('input', convert1);
 input2.addEventListener('input', convert2);
 
+saveButton.addEventListener('click', () => {
+    
+})
 
 
 
@@ -73,17 +79,6 @@ input2.addEventListener('input', convert2);
 
 
 
-// Conversion Function
-function convert() {
-    const valu = parseFloat(input1.value);
-    if (inchYardButton.textContent === buttonTexts[0]) {
-        // Inch to Yard
-        input2.value = (valu / 36).toFixed(2);// toFixed(2) eta dara dosomik ar ky ta songkha nibo seta bujhay
-    } else {
-        // Yard to Inch
-        input2.value = (valu * 36).toFixed(2);
-    }
-}
 
 
 
